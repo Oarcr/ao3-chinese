@@ -66,6 +66,7 @@ body:
         - SiliconFlow
         - Together AI
         - Zhipu AI
+        - 其它内置服务
         - 自定义服务 / Custom Service
         - 不涉及 / Not applicable
     validations:
