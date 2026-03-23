@@ -1,0 +1,89 @@
+name: 问题反馈 / Bug report
+title: "[BUG] "
+description: 反馈你遇到的问题 / Report the issue you are experiencing
+labels: ['bug']
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 在提交问题之前，请确认以下事项：
+        1. 请务必给 issue 填写一个简洁明了的标题，以便快速检索。
+        2. 请确保 [已有的问题](https://github.com/V-Lipset/ao3-chinese/issues?q=is%3Aissue) 中没有人提交过相似 issue，否则请在已有的 issue 下进行讨论。
+        3. 请务必按照模板规范详细描述问题，否则 issue 将会被直接关闭。
+        ## Before submitting the issue, please make sure of the following checklist:
+        1. Please be sure to fill in a concise and clear title for the issue so that others can quickly search.
+        2. Please make sure there is no similar issue in the [existing issues](https://github.com/V-Lipset/ao3-chinese/issues?q=is%3Aissue).
+        3. If AI translation fails, please check your API Key quota and network connection first.
+        4. Please describe the problem in detail according to the template specification, otherwise the issue will be closed directly.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述 / Describe the bug
+      description: 详细清晰地描述你遇到的问题，并附带截图 / Describe the problem you encountered in detail and clearly, and provide screenshots
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 插件版本 / Script Version
+      description: 请提供 AO3 Translator 的具体版本号（可在插件代码顶部的元数据中查看） / Please provide the specific version of AO3 Translator (can be found at the top of the settings panel)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 浏览器与插件管理器 / Browser & Userscript Manager
+      description: 请选择你使用的浏览器和插件管理器组合 / Please select your browser and userscript manager
+      options:
+        - Chrome + Tampermonkey
+        - Edge + Tampermonkey
+        - Firefox + Tampermonkey
+        - Chrome/Edge/Firefox + Violentmonkey
+        - Safari + Userscripts
+        - 其它 / Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: engine
+    attributes:
+      label: 翻译服务 / Translation Engine
+      description: 遇到问题时正在使用的翻译服务 / The translation engine you were using when the issue occurred
+      options:
+        - 谷歌翻译
+        - 微软翻译
+        - Anthropic
+        - Cerebras
+        - DeepSeek
+        - Google AI
+        - Groq AI
+        - ModelScope
+        - OpenAI
+        - SiliconFlow
+        - Together AI
+        - Zhipu AI
+        - 自定义服务 / Custom Service
+        - 不涉及 / Not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤 / To Reproduce
+      description: 请提供复现问题的具体步骤。如果是特定文章报错，请务必提供 AO3 文章链接 / Steps to reproduce the behavior. If it's a specific work, please provide the AO3 link.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志(勿上传日志文件，请粘贴日志内容) / Log (Do not upload the log file, paste the log content directly)
+      description: 请提供完整的运行日志。在插件设置面板中点击“更多功能” -> “调试模式与日志” -> “导出运行日志”，打开文件，并将其内容粘贴到此处。 / Please provide the complete execution log. Click "More Features" -> "Debug Mode & Logs" -> "Export Log" in the settings panel, and paste the content here.
+      render: log
+    validations:
+      required: true
