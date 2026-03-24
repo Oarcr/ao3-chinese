@@ -24,7 +24,7 @@
 // @supportURL   https://github.com/V-Lipset/ao3-chinese/issues
 // @downloadURL  https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/main.user.js
 // @updateURL    https://cdn.jsdelivr.net/gh/V-Lipset/ao3-chinese@main/main.user.js
-// @require      https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/zh-cn.js
+// @require      https://raw.githubusercontent.com/Oarcr/ao3-chinese/main/zh-cn.js
 // @connect      raw.githubusercontent.com
 // @connect      cdn.jsdelivr.net
 // @connect      translate.googleapis.com
