@@ -2,7 +2,7 @@
 // @name         AO3 Translator
 // @namespace    https://github.com/V-Lipset/ao3-chinese
 // @description  一个简单的用户脚本，专注于提升 AO3 的阅读体验
-// @version      1.6.1-2026-03-23
+// @version      1.6.1-2026-03-24
 // @author       V-Lipset
 // @license      GPL-3.0
 // @include      http*://archiveofourown.org/*
@@ -68,6 +68,11 @@
 		'Jan': '1', 'Feb': '2', 'Mar': '3', 'Apr': '4', 'May': '5', 'Jun': '6',
 		'Jul': '7', 'Aug': '8', 'Sep': '9', 'Oct': '10', 'Nov': '11', 'Dec': '12'
 	};
+
+	window.monthMap = monthMap;
+	if (typeof rerenderMenu === 'undefined') {
+		var rerenderMenu = () => {};
+	}
 
 	/**
 	 * 全局默认配置常量库
