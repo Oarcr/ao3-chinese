@@ -1,0 +1,17 @@
+{
+    "name": "BanG Dream",
+    "url": "https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/glossaries/BanG%20Dream.txt",
+    "version": "1.0.3",
+    "maintainer": "V-Lipset",
+    "visibility": true,
+    "feedback": "https://github.com/V-Lipset"
+  },
+  {
+    "name": "Path to Nowhere",
+    "url": "https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/glossaries/Path%20to%20Nowhere.txt",
+    "version": "1.0.7",
+    "maintainer": "Trace",
+    "visibility": false,
+    "feedback": "lipsetpatel@gmail.com"
+  }
+]
