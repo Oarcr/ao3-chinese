@@ -36,39 +36,43 @@ jobs:
               exit(0)
 
           def is_chinese(s):
+              # 判断字符串中是否包含中文字符
               return any('\u4e00' <= char <= '\u9fff' for char in s)
 
           def process_name(raw_name):
-              # 1. 移除结尾的 "术语表" (支持空格)
+              # 1. 移除结尾的 "术语表"
               raw_name = re.sub(r'\s*术语表\s*$', '', raw_name.strip())
               
-              # 2. 初步分割：处理显式分隔符 | 丨 /
+              # 2. 按照显式分隔符 (| 丨 /) 初步拆分
               initial_parts = [p.strip() for p in re.split(r'[|丨/]', raw_name) if p.strip()]
               
               all_fragments = []
               for part in initial_parts:
-                  # 3. 深度分割：处理混合在一起的 中文和非中文 (如 "Naruto 火影忍者")
-                  # 匹配连续的中文字符 或 连续的非中文字符
-                  fragments = re.findall(r'[\u4e00-\u9fff]+|[^\u4e00-\u9fff]+', part)
-                  all_fragments.extend([f.strip() for f in fragments if f.strip()])
+                  # 3. 智能拆分语言块：
+                  # 逻辑：仅在 [英文/数字] 与 [中文] 之间的空格处拆分
+                  # 这样可以保留 "宝可梦（小智）" 这种内部包含括号和中文的结构
+                  # 拆分点 A: 后面跟着中文的空格 -> \s+(?=[\u4e00-\u9fff])
+                  # 拆分点 B: 前面是中文的空格 -> (?<=[\u4e00-\u9fff])\s+
+                  sub_fragments = re.split(r'\s+(?=[\u4e00-\u9fff])|(?<=[\u4e00-\u9fff])\s+', part)
+                  all_fragments.extend([f.strip() for f in sub_fragments if f.strip()])
 
               if not all_fragments:
                   return raw_name, []
 
-              # 4. 提取中文块作为主名称
-              cn_fragments = [f for f in all_fragments if is_chinese(f)]
-              
-              if cn_fragments:
-                  main_name = cn_fragments[0] # 取第一个中文块
-              else:
-                  main_name = all_fragments[0] # 没中文就取第一个块
-
-              # 5. 其余所有块放入 tags (去重并保持顺序)
-              tags = []
+              # 4. 确定主名称 (Name)：优先选择包含中文的第一个片段
+              main_name = None
               for f in all_fragments:
-                  if f != main_name and f not in tags:
-                      tags.append(f)
-                      
+                  if is_chinese(f):
+                      main_name = f
+                      break
+              
+              # 如果全都没中文，取第一个片段
+              if not main_name:
+                  main_name = all_fragments[0]
+
+              # 5. 确定标签 (Tags)：除了主名称以外的所有片段
+              tags = [f for f in all_fragments if f != main_name]
+              
               return main_name, tags
 
           with open(wiki_path, 'r', encoding='utf-8') as f:
@@ -120,6 +124,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: auto-update glossary-index.json (cleaned names & tags)"
+            git commit -m "docs: auto-update glossary-index.json (fixed name splitting)"
             git push origin main
           fi
