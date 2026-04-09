@@ -50,7 +50,6 @@ jobs:
               for part in initial_parts:
                   # 3. 智能拆分语言块：
                   # 逻辑：仅在 [英文/数字] 与 [中文] 之间的空格处拆分
-                  # 这样可以保留 "宝可梦（小智）" 这种内部包含括号和中文的结构
                   # 拆分点 A: 后面跟着中文的空格 -> \s+(?=[\u4e00-\u9fff])
                   # 拆分点 B: 前面是中文的空格 -> (?<=[\u4e00-\u9fff])\s+
                   sub_fragments = re.split(r'\s+(?=[\u4e00-\u9fff])|(?<=[\u4e00-\u9fff])\s+', part)
@@ -124,6 +123,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: auto-update glossary-index.json (fixed name splitting)"
+            git commit -m "docs: auto-update glossary-index.json"
             git push origin main
           fi
