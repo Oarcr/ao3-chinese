@@ -35,69 +35,34 @@ jobs:
               print(f"Error: {wiki_path} not found.")
               exit(0)
 
-          def is_chinese(s):
-              # 判断字符串中是否包含中文字符
-              return any('\u4e00' <= char <= '\u9fff' for char in s)
-
-          def process_name(raw_name):
-              # 1. 移除结尾的 "术语表"
-              raw_name = re.sub(r'\s*术语表\s*$', '', raw_name.strip())
-              
-              # 2. 按照显式分隔符 (| 丨 /) 初步拆分
-              initial_parts = [p.strip() for p in re.split(r'[|丨/]', raw_name) if p.strip()]
-              
-              all_fragments = []
-              for part in initial_parts:
-                  # 3. 智能拆分语言块：
-                  # 逻辑：仅在 [英文/数字] 与 [中文] 之间的空格处拆分
-                  # 拆分点 A: 后面跟着中文的空格 -> \s+(?=[\u4e00-\u9fff])
-                  # 拆分点 B: 前面是中文的空格 -> (?<=[\u4e00-\u9fff])\s+
-                  sub_fragments = re.split(r'\s+(?=[\u4e00-\u9fff])|(?<=[\u4e00-\u9fff])\s+', part)
-                  all_fragments.extend([f.strip() for f in sub_fragments if f.strip()])
-
-              if not all_fragments:
-                  return raw_name, []
-
-              # 4. 确定主名称 (Name)：优先选择包含中文的第一个片段
-              main_name = None
-              for f in all_fragments:
-                  if is_chinese(f):
-                      main_name = f
-                      break
-              
-              # 如果全都没中文，取第一个片段
-              if not main_name:
-                  main_name = all_fragments[0]
-
-              # 5. 确定标签 (Tags)：除了主名称以外的所有片段
-              tags = [f for f in all_fragments if f != main_name]
-              
-              return main_name, tags
-
           with open(wiki_path, 'r', encoding='utf-8') as f:
               content = f.read()
 
           sections = re.split(r'\n(?=### )', content)
-          results = []
+          results =[]
 
           for section in sections:
               if not section.strip().startswith('###'):
                   continue
               
               name_match = re.search(r'###\s+(.*)', section)
-              url_match = re.search(r'\*\s+链接：(?:\[.*?\]\()?(https?://[^\s\)]+)\)?', section)
-              maint_match = re.search(r'\*\s+维护者：\[(.*?)\]\((.*?)\)', section)
+              url_match = re.search(r'\*\s+链接[:：]\s*(?:\[.*?\]\()?(https?://[^\s\)]+)\)?', section)
+              maint_match = re.search(r'\*\s+维护者[:：]\s*\[(.*?)\]\((.*?)\)', section)
+              alias_match = re.search(r'\*\s+译名[:：]\s*(.*)', section)
 
               if name_match and url_match and maint_match:
-                  raw_name = name_match.group(1).strip()
-                  main_name, tags = process_name(raw_name)
-                  
+                  main_name = name_match.group(1).strip()
                   url = url_match.group(1).strip()
                   maintainer = maint_match.group(1).strip()
                   feedback = maint_match.group(2).strip()
 
                   if feedback.startswith('mailto:'):
                       feedback = feedback.replace('mailto:', '')
+
+                  tags =[]
+                  if alias_match:
+                      raw_aliases = alias_match.group(1).strip()
+                      tags = [t.strip() for t in re.split(r'[、，,/|]', raw_aliases) if t.strip()]
 
                   results.append({
                       "name": main_name,
