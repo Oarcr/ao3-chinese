@@ -1,7 +1,10 @@
 [
   {
     "name": "BanG Dream",
-    "tags": [],
+    "tags": [
+      "梦想协奏曲",
+      "バンドリ"
+    ],
     "url": "https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/glossaries/BanG%20Dream.txt",
     "maintainer": "V-Lipset",
     "visibility": true,
@@ -10,7 +13,9 @@
   {
     "name": "Path to Nowhere",
     "tags": [
-      "无期迷途"
+      "无期迷途",
+      "無期迷途",
+      "무기미도"
     ],
     "url": "https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/glossaries/Path%20to%20Nowhere.txt",
     "maintainer": "V-Lipset",
@@ -20,7 +25,8 @@
   {
     "name": "Princess Principal",
     "tags": [
-      "公主代理人"
+      "公主代理人",
+      "プリンセス・プリンシパル"
     ],
     "url": "https://raw.githubusercontent.com/LycorisWind/ao3-chinese/refs/heads/main/glossaries/Princess%20Principal.txt",
     "maintainer": "Ly",
@@ -28,8 +34,11 @@
     "feedback": "https://github.com/LycorisWind"
   },
   {
-    "name": "Twisted Wonderland",
-    "tags": [],
+    "name": "Disney Twisted-Wonderland",
+    "tags": [
+      "迪士尼扭曲仙境",
+      "ディズニーツイステッドワンダーランド"
+    ],
     "url": "https://raw.githubusercontent.com/Mizukan/ao3-chinese/refs/heads/main/glossaries/twisted%20wonderland.txt",
     "maintainer": "minasami",
     "visibility": true,
@@ -38,7 +47,10 @@
   {
     "name": "Naruto",
     "tags": [
-      "火影忍者"
+      "火影忍者",
+      "狐忍",
+      "NARUTO -ナルト-",
+      "나루토"
     ],
     "url": "https://raw.githubusercontent.com/vkun767/ao3-chinese/refs/heads/main/%E2%80%8Eglossaries/Naruto-20250917.txt",
     "maintainer": "weikun767@163.com",
@@ -48,7 +60,8 @@
   {
     "name": "Harry Potter",
     "tags": [
-      "哈利波特"
+      "哈利·波特",
+      "ハリー・ポッター"
     ],
     "url": "https://raw.githubusercontent.com/vkun767/ao3-chinese/refs/heads/main/%E2%80%8Eglossaries/Harry%20Potter-20250917.txt",
     "maintainer": "weikun767@163.com",
@@ -56,9 +69,11 @@
     "feedback": "weikun767@163.com"
   },
   {
-    "name": "Pokemon Anime",
+    "name": "Pokemon",
     "tags": [
-      "宝可梦"
+      "宝可梦",
+      "神奇宝贝",
+      "ポケットモンスター"
     ],
     "url": "https://raw.githubusercontent.com/Senka-owl/ao3-chinese-senka/refs/heads/main/glossaries/PokemonAnime.txt",
     "maintainer": "Senka-owl",
@@ -66,8 +81,10 @@
     "feedback": "https://github.com/Senka-owl"
   },
   {
-    "name": "To Be Hero X",
-    "tags": [],
+    "name": "TO BE HERO X",
+    "tags": [
+      "凸变英雄X"
+    ],
     "url": "https://raw.githubusercontent.com/x000315/ao3-chinese/refs/heads/main/glossaries/To%20Be%20Hero%20X.txt",
     "maintainer": "x000315",
     "visibility": true,
@@ -84,8 +101,10 @@
     "feedback": "https://github.com/Anselnya"
   },
   {
-    "name": "夜访吸血鬼",
-    "tags": [],
+    "name": "Interview with the Vampire",
+    "tags": [
+      "夜访吸血鬼"
+    ],
     "url": "https://raw.githubusercontent.com/Anselnya/ao3-chinese/refs/heads/main/glossaries/Interview%20with%20the%20Vampire.txt",
     "maintainer": "Water Ghosts",
     "visibility": true,
@@ -102,8 +121,10 @@
     "feedback": "atasjane@gmail.com"
   },
   {
-    "name": "汉尼拔术语表",
-    "tags": [],
+    "name": "Hannibal",
+    "tags": [
+      "汉尼拔"
+    ],
     "url": "https://raw.githubusercontent.com/Anselnya/ao3-chinese/refs/heads/main/glossaries/Hannibal.txt",
     "maintainer": "Winston",
     "visibility": true,
@@ -111,16 +132,22 @@
   },
   {
     "name": "Persona 5",
-    "tags": [],
+    "tags": [
+      "女神异闻录5",
+      "女神異聞錄5",
+      "ペルソナ5"
+    ],
     "url": "https://raw.githubusercontent.com/CyanSkyXD/ao3-chinese/refs/heads/main/glossaries/Persona%205.txt",
     "maintainer": "CyanSkyXD",
     "visibility": true,
     "feedback": "https://github.com/CyanSkyXD"
   },
   {
-    "name": "火焰纹章之风花雪月",
+    "name": "Fire Emblem: Three Houses",
     "tags": [
-      "Fire Emblem: Three Houses"
+      "火焰之纹章：风花雪月",
+      "聖火降魔錄 風花雪月",
+      "ファイアーエムブレム 風花雪月"
     ],
     "url": "https://raw.githubusercontent.com/Senka-owl/ao3-chinese-senka/refs/heads/main/glossaries/FE3h",
     "maintainer": "Senka-owl",
@@ -129,7 +156,11 @@
   },
   {
     "name": "Fullmetal Alchemist",
-    "tags": [],
+    "tags": [
+      "钢之炼金术师",
+      "鋼之鍊金術師",
+      "鋼の錬金術師"
+    ],
     "url": "https://raw.githubusercontent.com/Senka-owl/ao3-chinese-senka/refs/heads/main/glossaries/ullmetal%20Alchemist.txt",
     "maintainer": "Senka-owl",
     "visibility": true,
@@ -137,17 +168,20 @@
   },
   {
     "name": "The Locked Tomb",
-    "tags": [],
+    "tags": [
+      "闭锁之墓",
+      "被锁住的坟墓"
+    ],
     "url": "https://raw.githubusercontent.com/zhufree/ao3-chinese/refs/heads/main/glossaries/TheLockedTomb.txt",
     "maintainer": "FemslashAmateur",
     "visibility": true,
     "feedback": "https://github.com/zhufree"
   },
   {
-    "name": "전지적 독자 시점 - 싱숑",
+    "name": "Omniscient Reader's Viewpoint",
     "tags": [
-      "Omniscient Reader's Viewpoint",
-      "全知读者视角"
+      "全知读者视角",
+      "전지적 독자 시점"
     ],
     "url": "https://raw.githubusercontent.com/Anselnya/ao3-chinese/refs/heads/main/glossaries/ORV.txt",
     "maintainer": "■■■",
@@ -155,10 +189,12 @@
     "feedback": "https://github.com/Anselnya"
   },
   {
-    "name": "백작가의 망나니가 되었다",
+    "name": "Lout of Count's Family",
     "tags": [
-      "Lout of Count's Family",
-      "成为伯爵家的废物"
+      "成为伯爵家的废物",
+      "成為伯爵家的混混",
+      "백작가의 망나니가 되었다",
+      "伯爵家の暴れん坊になった"
     ],
     "url": "https://raw.githubusercontent.com/aki-zukila/ao3-chinese/refs/heads/main/glossaries/Lcf.txt",
     "maintainer": "aki-zukila",
@@ -168,7 +204,8 @@
   {
     "name": "Transformers",
     "tags": [
-      "变形金刚"
+      "变形金刚",
+      "トランスフォーマー"
     ],
     "url": "https://raw.githubusercontent.com/Valyria336/ao3-chinese/refs/heads/patch-1/glossaries/Transformer.txt",
     "maintainer": "拉葛莎",
@@ -178,7 +215,10 @@
   {
     "name": "Attack on Titan",
     "tags": [
-      "进击的巨人"
+      "进击的巨人",
+      "進擊的巨人",
+      "進撃の巨人",
+      "L'Attaque des Titans"
     ],
     "url": "https://raw.githubusercontent.com/Valyria336/ao3-chinese/refs/heads/patch-1/glossaries/%E8%BF%9B%E5%87%BB%E7%9A%84%E5%B7%A8%E4%BA%BA.txt",
     "maintainer": "拉葛莎",
@@ -198,7 +238,9 @@
   {
     "name": "Cosmic Princess Kaguya",
     "tags": [
-      "超时空辉夜姬"
+      "超时空辉夜姬",
+      "超時空輝耀姬",
+      "超かぐや姫"
     ],
     "url": "https://raw.githubusercontent.com/V-Lipset/ao3-chinese/main/glossaries/Cosmic%20Princess%20Kaguya.txt",
     "maintainer": "V-Lipset",
@@ -208,7 +250,8 @@
   {
     "name": "Vampire Knight",
     "tags": [
-      "吸血鬼骑士"
+      "吸血鬼骑士",
+      "ヴァンパイア騎士"
     ],
     "url": "https://raw.githubusercontent.com/shlylhy/ao3-chinese/refs/heads/main/glossaries/Vampire%20Knight%20%E5%90%B8%E8%A1%80%E9%AC%BC%E9%AA%91%E5%A3%AB.txt",
     "maintainer": "Shlylhy",
