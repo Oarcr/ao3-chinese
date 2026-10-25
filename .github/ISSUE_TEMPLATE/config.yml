@@ -1,0 +1,15 @@
+blank_issues_enabled: false
+contact_links:
+- name: 常见问题与安装帮助 / FAQ and installation help
+  url: https://v-lipset.github.io/docs/support/faq/
+  about: 提交 Bug 前，请先检查常见问题。/ Check the FAQ before reporting a bug.
+- name: 翻译服务与 AI 配置 / Translation services and AI configuration
+  url: https://v-lipset.github.io/docs/support/service/
+  about: 查看支持的翻译服务、API 配置说明及相关注意事项。/ Read about supported translation services, API setup, and related notes.
+- name: 社区讨论与使用求助 / Discussions and usage questions
+  url: https://github.com/V-Lipset/ao3-chinese/discussions
+  about: 用于使用方法、配置求助和开放式讨论；已确认的 Bug 请使用 Bug Report。/ Ask usage questions or discuss ideas here; use Bug Report for
+    confirmed bugs.
+- name: 搜索已有 Issues / Search existing issues
+  url: https://github.com/V-Lipset/ao3-chinese/issues?q=is%3Aissue
+  about: 先确认是否已有相同问题或功能建议。/ Check whether the issue or request already exists.

@@ -1,0 +1,289 @@
+name: 🐛 Bug Report (English)
+description: 'English form: report script errors, translation failures, or compatibility issues.'
+title: '[Bug]: '
+body:
+- type: markdown
+  attributes:
+    value: '**Form language: [简体中文](https://github.com/V-Lipset/ao3-chinese/issues/new?template=01-bug-report-zh.yml)
+      · English (current)**
+
+
+      Thanks for helping improve AO3 Translator! Please provide as much detail as you can so the maintainer can
+      reproduce and investigate the issue.
+
+
+      Before submitting, check the [FAQ](https://v-lipset.github.io/docs/support/faq/) and [search existing issues](https://github.com/V-Lipset/ao3-chinese/issues?q=is%3Aissue).
+      For usage or configuration questions, please use [GitHub Discussions](https://github.com/V-Lipset/ao3-chinese/discussions).'
+- type: checkboxes
+  id: issue-search
+  attributes:
+    label: Before submitting
+    description: Please search for existing reports to avoid duplicates.
+    options:
+    - label: I searched existing issues and could not find a duplicate.
+      required: true
+  validations:
+    required: true
+- type: dropdown
+  id: feature-area
+  attributes:
+    label: Affected feature
+    description: Choose the closest match. Select “Other / Not sure” if you are unsure.
+    options:
+    - UI translation
+    - Work text, summary, or notes translation
+    - AI or custom translation service
+    - Language detection
+    - Glossary or translation rules
+    - Work filtering or blocking
+    - Reading layout and formatting
+    - EPUB or other ebook export
+    - Settings or configuration import/export
+    - Cache management
+    - WebDAV or other data sync
+    - Floating button or settings panel
+    - Installation, updates, or script permissions
+    - Website compatibility
+    - Other / Not sure
+  validations:
+    required: true
+- type: textarea
+  id: actual-behavior
+  attributes:
+    label: What happened?
+    description: Describe what you saw, any error messages, and what was affected. Avoid vague descriptions such
+      as “it does not work.”
+    placeholder: 'Example: The page UI is translated, but after I click the translation button on a work chapter,
+      it stays on “loading” and no translation appears.'
+  validations:
+    required: true
+- type: textarea
+  id: expected-behavior
+  attributes:
+    label: What did you expect to happen?
+    description: Describe what you expected to happen instead.
+    placeholder: 'Example: Clicking the translation button should display a translation for each paragraph.'
+  validations:
+    required: true
+- type: textarea
+  id: reproduction-steps
+  attributes:
+    label: Steps to reproduce
+    description: List the steps from opening the page to seeing the issue. If it only happens on a specific page
+      type, mention that. You do not need to share a full work URL if you prefer not to.
+    placeholder: '1. Open an AO3 work or chapter.
+
+      2. Open the AO3 Translator settings panel.
+
+      3. Enable or select …
+
+      4. Click …
+
+      5. Observe …'
+  validations:
+    required: true
+- type: dropdown
+  id: occurrence
+  attributes:
+    label: How often does it happen?
+    description: Choose the option that best describes the issue.
+    options:
+    - Every time
+    - Sometimes
+    - Only on a specific work, chapter, or page
+    - Only on a specific website
+    - Happened once
+    - Not sure
+  validations:
+    required: true
+- type: dropdown
+  id: website
+  attributes:
+    label: Website where the issue occurs
+    description: If it is a mirror site, enter its domain in the next field. Do not share URLs containing account
+      or private information.
+    options:
+    - 'Official AO3: archiveofourown.org'
+    - archiveofourown.gay
+    - Other AO3 mirror
+    - Not website-specific
+    - Not sure
+  validations:
+    required: true
+- type: input
+  id: website-domain
+  attributes:
+    label: Website domain (optional)
+    description: Enter only the domain if the issue occurs on another mirror or a specific site. A full work URL
+      is not needed.
+    placeholder: 'Example: example-mirror.com'
+  validations:
+    required: false
+- type: input
+  id: script-version
+  attributes:
+    label: AO3 Translator version
+    description: Find this in the script details in your userscript manager. If you cannot find it, enter “Not sure.”
+    placeholder: 'Example: 1.10.2-2026-09-22'
+  validations:
+    required: true
+- type: dropdown
+  id: install-variant
+  attributes:
+    label: Installed script variant
+    description: Choose “Not sure” if you do not know which variant you installed.
+    options:
+    - Main remote version
+    - Main local version
+    - Backup remote version
+    - Backup local version
+    - Other installation method
+    - Not sure
+  validations:
+    required: true
+- type: dropdown
+  id: operating-system
+  attributes:
+    label: Operating system
+    description: Select the operating system of the device running your browser, not just the device brand. Required.
+    options:
+    - Windows
+    - macOS
+    - Linux
+    - Android
+    - iOS / iPadOS
+    - ChromeOS
+    - Other
+    - Not sure
+  validations:
+    required: true
+- type: input
+  id: operating-system-version
+  attributes:
+    label: Operating system version (optional)
+    description: Provide the OS version if you know it.
+    placeholder: 'Example: Windows 11 24H2, macOS 15, Android 16, iOS 18'
+  validations:
+    required: false
+- type: dropdown
+  id: browser
+  attributes:
+    label: Browser
+    description: Select the browser you use to access AO3.
+    options:
+    - Google Chrome
+    - Microsoft Edge
+    - Mozilla Firefox
+    - Safari
+    - Via
+    - Focus
+    - Kiwi Browser
+    - Yandex Browser
+    - Other
+    - Not sure
+  validations:
+    required: true
+- type: input
+  id: browser-version
+  attributes:
+    label: Browser version (optional)
+    description: You can usually find this on the browser’s About page. Leave blank if unknown.
+    placeholder: 'Example: Chrome 131.0.6778.86'
+  validations:
+    required: false
+- type: dropdown
+  id: userscript-manager
+  attributes:
+    label: Userscript manager
+    description: Select the userscript manager that installs or runs AO3 Translator.
+    options:
+    - Tampermonkey
+    - Violentmonkey
+    - ScriptCat
+    - Greasemonkey
+    - Userscripts (iOS)
+    - Stay (iOS)
+    - Built-in userscript manager in Via / Focus
+    - Other
+    - Not sure
+  validations:
+    required: true
+- type: input
+  id: userscript-manager-version
+  attributes:
+    label: Userscript manager version (optional)
+    description: Find this in the extension details or About page. Leave blank if unknown.
+    placeholder: 'Example: Tampermonkey 5.x'
+  validations:
+    required: false
+- type: dropdown
+  id: translation-service
+  attributes:
+    label: Translation service involved (optional)
+    description: Complete this only if the issue involves work translation, language detection, or a translation
+      API.
+    options:
+    - Google Translate
+    - Microsoft / Bing Translator
+    - Tencent TranSmart
+    - Anthropic / Claude
+    - DeepSeek
+    - Google AI / Gemini
+    - Groq
+    - OpenAI
+    - SiliconFlow
+    - Cerebras
+    - ModelScope
+    - Together AI
+    - Zhipu AI
+    - Custom API / Other service
+    - Not related to translation
+    - Not sure
+  validations:
+    required: false
+- type: input
+  id: model-name
+  attributes:
+    label: Model name (optional)
+    description: For AI translation issues, enter the selected model ID. Do not enter an API key.
+    placeholder: 'Example: deepseek-chat'
+  validations:
+    required: false
+- type: textarea
+  id: logs
+  attributes:
+    label: Relevant logs or error messages (optional)
+    description: You can view or export logs from the script’s “更多功能 → 调试模式与日志” section, or paste relevant browser-console
+      errors. Before submitting, remove API keys, access tokens, passwords, cookies, and other sensitive information.
+      Leave blank if you have no logs.
+    placeholder: Paste relevant errors or logs here. Do not include API keys or passwords.
+  validations:
+    required: false
+- type: upload
+  id: attachments
+  attributes:
+    label: Screenshots, recordings, or log files (optional)
+    description: Attachments can help reproduce the issue. Hide account details, API keys, tokens, passwords, private
+      bookmarks, and any content you do not want to make public before uploading.
+  validations:
+    required: false
+- type: textarea
+  id: additional-context
+  attributes:
+    label: Additional context (optional)
+    description: For example, which version first showed the issue, whether it began after an update, or whether
+      you tried disabling other scripts or extensions.
+    placeholder: Any additional information that may help investigate the issue.
+  validations:
+    required: false
+- type: checkboxes
+  id: sensitive-information
+  attributes:
+    label: Privacy and sensitive information
+    description: Please review the report and all attachments before submitting.
+    options:
+    - label: I checked the report and attachments and confirmed they do not expose API keys, passwords, access tokens,
+        cookies, or other private information.
+      required: true
+  validations:
+    required: true
