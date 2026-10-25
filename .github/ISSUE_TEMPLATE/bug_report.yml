@@ -1,0 +1,214 @@
+name: 问题反馈
+description: 报告 AO3 中文化脚本中的故障或异常
+title: "[问题] "
+labels:
+  - "问题反馈"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈问题。请尽量填写已知信息，帮助维护者复现和定位问题。
+
+        **隐私提醒：** 提交前请检查截图、日志和配置内容，删除 API 密钥、访问令牌、密码、个人信息，以及不希望公开的作品内容。请勿直接上传包含密钥的完整配置文件。
+  - type: dropdown
+    id: feature
+    attributes:
+      label: 问题所属功能
+      description: 请选择最接近的功能；如果不确定，请选择“其他”。
+      options:
+        - 页面界面汉化
+        - 作品内容翻译
+        - AI 翻译服务或自定义服务
+        - 语言检测
+        - 术语表与翻译规则
+        - 作品屏蔽
+        - 阅读排版与格式
+        - 作品导出（EPUB 等）
+        - 配置导入与导出
+        - 缓存管理
+        - 云端同步（WebDAV）
+        - 悬浮按钮与设置面板
+        - 安装、更新或权限
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 问题现象
+      description: 请描述具体发生了什么。若有报错提示，请尽量原样填写。
+      placeholder: 例如：打开作品章节后，点击翻译按钮没有反应，页面内容仍然是英文。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请按顺序写出触发问题的操作；如果问题偶尔发生，也请描述当时的操作。
+      placeholder: |
+        1. 打开……
+        2. 进入……
+        3. 点击……
+        4. 出现……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期结果
+      description: 你原本希望脚本出现什么表现？
+      placeholder: 例如：点击翻译后，章节正文应显示中文译文。
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: 问题出现频率
+      options:
+        - 每次都能复现
+        - 偶尔出现
+        - 只出现过一次
+        - 暂时无法确定
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: 出问题的网站
+      description: 请填写网站名称或域名；无需提供账号、个人页面或其他隐私信息。
+      placeholder: 例如 archiveofourown.org 或具体镜像站域名
+    validations:
+      required: true
+  - type: input
+    id: script_version
+    attributes:
+      label: 脚本版本
+      description: 可在脚本管理器的脚本详情中查看版本号。
+      placeholder: 例如 1.10.2
+    validations:
+      required: true
+  - type: dropdown
+    id: install_source
+    attributes:
+      label: 脚本安装来源
+      options:
+        - GitHub / 原始脚本链接
+        - jsDelivr
+        - 其他来源
+        - 不清楚
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Android
+        - iOS / iPadOS
+        - ChromeOS
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: os_version
+    attributes:
+      label: 操作系统版本
+      description: 例如 Windows 11、macOS 15、Android 15；不清楚可留空。
+      placeholder: 操作系统名称及版本
+    validations:
+      required: false
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 浏览器
+      options:
+        - Chrome
+        - Microsoft Edge
+        - Firefox
+        - Safari
+        - Opera
+        - Brave
+        - 其他 Chromium 内核浏览器
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: browser_version
+    attributes:
+      label: 浏览器版本
+      description: 可在浏览器的“关于”页面查看；不清楚可留空。
+      placeholder: 浏览器版本号
+    validations:
+      required: false
+  - type: dropdown
+    id: manager
+    attributes:
+      label: 用户脚本管理器
+      options:
+        - Tampermonkey（篡改猴）
+        - Violentmonkey（暴力猴）
+        - Greasemonkey
+        - Userscripts
+        - 其他
+        - 不清楚
+    validations:
+      required: true
+  - type: input
+    id: manager_version
+    attributes:
+      label: 用户脚本管理器版本
+      description: 可在扩展程序详情或脚本管理器设置中查看；不清楚可留空。
+      placeholder: 版本号
+    validations:
+      required: false
+  - type: dropdown
+    id: translation_provider
+    attributes:
+      label: 是否涉及翻译服务
+      description: 如果问题与翻译结果、翻译失败或速度有关，请选择对应选项。
+      options:
+        - 不涉及翻译服务
+        - Google 翻译
+        - Microsoft / Bing 翻译
+        - 百度翻译
+        - 腾讯翻译
+        - DeepSeek 或其他 AI 服务
+        - 其他 AI / 自定义服务
+        - 不清楚
+    validations:
+      required: false
+  - type: input
+    id: model
+    attributes:
+      label: 翻译模型或服务名称（选填）
+      description: 仅在涉及 AI 或自定义翻译服务时填写。请勿填写 API 密钥。
+      placeholder: 例如实际使用的模型名称
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: 错误信息或日志（选填）
+      description: 如果方便，请从脚本设置中的调试/日志功能复制相关错误信息。提交前请删除密钥、令牌、密码和个人信息。
+      placeholder: 将相关错误信息粘贴在这里；没有日志可留空。
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: attachments
+    attributes:
+      label: 截图、录屏或补充信息（选填）
+      description: 可将图片或录屏拖入此处，也可补充其他有助于定位问题的信息。请遮盖账号、个人信息和敏感内容。
+      placeholder: 请勿上传包含密钥或隐私信息的截图、配置文件。
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我已检查本次提交的文字、日志和附件，并尽可能移除了密钥、密码、个人信息及不希望公开的内容。
+          required: true
